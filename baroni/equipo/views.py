@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Equipo
 from .forms import MemberForm
 
-""" Funcion que lista los miembros del Equipo """
+#Funcion que lista los miembros del Equipo
 def list_equipo(request):
     
   all_equipo = Equipo.objects.all()
@@ -13,7 +13,7 @@ def list_equipo(request):
   
   return render(request, 'equipo/list_equipo.html', context)
 
-""" Funcion para renderizar miembro segun ID """
+#Funcion para renderizar miembro segun ID
 def member_detail(request, id):
   member = Equipo.objects.get(id=id)
   context = {
@@ -21,7 +21,7 @@ def member_detail(request, id):
   }
   return render(request, 'equipo/member_detail.html', context)
 
-""" Funcion para crear miembro con Form del HTML """
+#Funcion para crear miembro con Form del HTML
 """ def create_member(request):
   if request.method == 'GET':      
     return render(request, 'equipo/create_member.html', context={})
@@ -36,7 +36,7 @@ def member_detail(request, id):
     Equipo.objects.create(name = name, last_name = last_name, email = email, phone = phone, bio = bio, position = position, image = image)
     return render(request, 'equipo/create_member.html', context={}) """
 
-""" Funcion para crear miembro a traves de django forms """
+#Funcion para crear miembro a traves de django forms
 def create_member(request):
   if request.method == 'GET':  
     form = MemberForm()    

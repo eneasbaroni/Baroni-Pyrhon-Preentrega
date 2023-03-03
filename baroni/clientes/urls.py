@@ -5,7 +5,7 @@ urlpatterns = [
   path('list-clientes/', list_clientes),
   path('create-cliente/', create_cliente),
   
-  """ Rutas Pendientes """
+  #Rutas Pendientes
   #path('edit-cliente/<int:id>', update_cliente),
   #path('delete-cliente/<int:id>', delete_cliente),
 ]

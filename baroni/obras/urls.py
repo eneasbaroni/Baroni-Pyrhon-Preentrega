@@ -6,7 +6,7 @@ urlpatterns = [
   path('obra-detail/<int:id>', obra_detail),
   path('create-obra/', create_obra),
    
-  """ Rutas Pendientes """
+  #Rutas Pendientes
   #path('edit-alquiler/<int:id>', update_obra),
   #path('delete-obra/<int:id>', delete_obra),
 ]

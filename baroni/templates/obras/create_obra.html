@@ -24,27 +24,25 @@
             
           </form>
           
-        </div>
-         
-        <div class="mainLinks createPage">
-          {%if message %} <!-- manejo de errores que envai django al verificar el formulario -->
-            <h1>ERROR AL CREAR MIEMBRO</h1> 
-            <h2>{{ message }}</h2>  
-            <a href="/equipo/create-member">Volver a Formulario</a>
-          {% else %}
-            <h1>OBRA CREADA</h1>
-            <a href="/obras/list-obras">Volver a Obras</a>
-          {% endif %}
-        </div>
+        </div>         
+        
     </main>
 
   {% else %}
 
     <main>
+
       <div class="mainLinks createPage">
-        <h1>PROPIEDAD CREADA</h1>  
-        <a href="/obras/list-obras">Ir a Obras</a>
+        {%if message %} <!-- manejo de errores que envai django al verificar el formulario -->
+          <h1>ERROR AL CREAR MIEMBRO</h1> 
+          <h2>{{ message }}</h2>  
+          <a href="/equipo/create-member">Volver a Formulario</a>
+        {% else %}
+          <h1>OBRA CREADA</h1>
+          <a href="/obras/list-obras">Volver a Obras</a>
+        {% endif %}
       </div>
+      
     </main>
       
   {% endif %}

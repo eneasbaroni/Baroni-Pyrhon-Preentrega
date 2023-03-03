@@ -21,15 +21,15 @@ from .views import index, about
 
 
 urlpatterns = [
-    """ Ruta Panel Administrador """
+    #Ruta Panel Administrador
     path('admin/', admin.site.urls),
 
-    """ Ruta Generales """
+    #Ruta Generales
     path('', index, name='index'),
     path('about/', about, name='about'),   
 
-    """ Rutas de APIS """
+    #Rutas de APIS
     path('obras/', include('obras.urls')),
     path('clientes/', include('clientes.urls')),
     path('equipo/', include('equipo.urls')),
-] + static(MEDIA_URL, document_root=MEDIA_ROOT) """ Para cargar archivos estaticos """
+] + static(MEDIA_URL, document_root=MEDIA_ROOT) #Para cargar archivos estaticos
