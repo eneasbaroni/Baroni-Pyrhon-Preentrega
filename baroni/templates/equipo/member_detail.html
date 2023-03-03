@@ -9,7 +9,7 @@
       <h1>{{member.name|upper}} {{member.last_name|upper}}</h1> 
       <p class="profesion">{{member.position|upper}}</p>
       
-      {%if member.image%}
+      {%if member.image%} <!-- verifico que haya una imagen para que no se genere error -->
       <img src="{{member.image.url}}" alt="imagen del miembro">        
       {%endif%} 
 

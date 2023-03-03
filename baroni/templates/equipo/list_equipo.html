@@ -9,14 +9,13 @@
       {%for el in equipo%}
       
         <a class="member" href="/equipo/member-detail/{{el.id}}"> 
-          {%if el.image%}
-            <!-- <div class="memberImg" style="background-image: url({{el.image.url}});"></div> -->
-            <img src="{{el.image.url}}" alt="imagen del miembro">        
-            <!-- <div class="memberImg"><img src="{{el.image.url}}" alt="imagen del miembro"> </div> -->
-          {%endif%}              
+
+          {%if el.image%}            
+            <img src="{{el.image.url}}" alt="imagen del miembro">   
+          {%endif%}     
+                   
           <div class="memberInfo">
-            <h3> {{el.name|upper}}<br/>{{el.last_name|upper}}</h3>           
-                        
+            <h3> {{el.name|upper}}<br/>{{el.last_name|upper}}</h3>   
             <p>{{el.position}}</p>           
           </div>
             

@@ -5,9 +5,8 @@ class Obra(models.Model):
     price = models.IntegerField()
     area = models.IntegerField()
     description = models.TextField()    
-    credit = models.BooleanField()
-    """ imagen = models.CharField(max_length=200)"""
-    image = models.ImageField(upload_to='obra_images', null=True, blank=True) #se debe instalar pillow  
+    credit = models.BooleanField()    
+    image = models.ImageField(upload_to='obra_images', null=True, blank=True) #se debe instalar pillow. upload_to es donde se va a guardar la imangen en la base de datos  
 
     def __str__(self):
         return self.name

@@ -7,7 +7,7 @@
     <div class="obraContainer">
       <h1>{{obra.name|upper}}</h1>      
         
-      {%if obra.image%}
+      {%if obra.image%} <!-- verifico que haya una imagen para que no se genere error -->
         <img src="{{obra.image.url}}" alt="imagen de la obra">        
       {%endif%}         
 

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Obra
 from .forms import ObraForm
 
+""" Funcion que lista las Obras """
 def list_obras(request):
   """ if search """
   if 'search' in request.GET:
@@ -21,6 +22,7 @@ def obra_detail(request, id):
   }
   return render(request, 'obras/obra_detail.html', context)
 
+""" Funcion para crear Obra con Form del HTML """
 """ def create_obra(request):
   if request.method == 'GET':      
     return render(request, 'obras/create_obra.html', context={})
@@ -34,6 +36,7 @@ def obra_detail(request, id):
     Obra.objects.create(name = name, price = price, area = area, description = description, credit = credit, image = image)
     return render(request, 'obras/create_obra.html', context={}) """
 
+""" Funcion para crear Obra a traves de django forms """
 def create_obra(request):
   if request.method == 'GET':  
     form = ObraForm()    
@@ -47,7 +50,7 @@ def create_obra(request):
     else:
       context = {
         'form': form,
-        'message': form.errors
+        'message': form.errors #envio de errores para renderizar en html
       }
       return render(request, 'obras/create_obra.html', context)
 

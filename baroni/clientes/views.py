@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Cliente
 from .forms import ClienteForm
 
+""" funcion que lista los clientes """
 def list_clientes(request):
     
   all_clientes = Cliente.objects.all()
@@ -12,6 +13,7 @@ def list_clientes(request):
   
   return render(request, 'clientes/list_clientes.html', context)
 
+""" Funcion para crear clientes a traves de django forms """
 def create_cliente(request):
   if request.method == 'GET':  
     form = ClienteForm()    
@@ -25,7 +27,7 @@ def create_cliente(request):
     else:
       context = {
         'form': form,
-        'message': form.errors
+        'message': form.errors #envio de errores para renderizar en html
       }
       return render(request, 'clientes/create_cliente.html', context)
       
