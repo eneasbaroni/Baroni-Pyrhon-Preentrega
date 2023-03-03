@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %} Clientes {% endblock %}
+{% block content %}
+
+  <main id="clientes">  
+    
+    <h1>CLIENTES</h1>
+    <div class="clientesContainer">
+      {%for el in clientes%}
+        <div class="cliente">      
+          <h3>{{el.name}} {{el.last_name}}</h3>
+          <p>ID: {{el.id}}</p>
+          <p>EMAIL: {{el.email}}</p>
+          <p>TELEFONO: {{el.phone}}</p>
+          <p>DIRECCIÓN: {{el.address}}</p>
+          <p>Apto Credito: 
+            {% if obra.credit == True %}
+              Si
+            {% else %}
+              No
+            {% endif %}
+          </p>
+          <p>Estado:
+            {% if obra.state == True %}
+              Activo
+            {% else %}
+              Inactivo
+            {% endif %}
+          </p>  
+
+        </div>
+      {% endfor %}
+
+    </div>  
+
+    <div class="mainLinks">
+      <!-- AGREGAR PERMISO PARA ADMINISTRADO  -> if request.user.is_superuser-->
+      <a href="/clientes/create-cliente">Crear Cliente</a>  
+      <a href="/">Volver a Inicio</a>
+    </div>
+   
+    
+  </main>
+{% endblock %}
+  

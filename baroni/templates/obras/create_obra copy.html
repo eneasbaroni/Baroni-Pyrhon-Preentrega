@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %} Crear Obra {% endblock %}
+{% block content %}
+<section class="section">
+  {% if request.method == "GET"%}  
+  
+    <!-- AGREGAR PERMISO ADMINISTRADOR ->if request.user.is_superuser--> 
+    <main id="form">
+
+      <h1>CREAR OBRA</h1> 
+        <div class="formContainer">
+          <form action="" method="POST" enctype="multipart/form-data"> <!-- en acction no va nada ya que utiliza la misma url -->
+  
+            {% csrf_token %} 
+            <legend>FORMULARIO DE CREACION</legend>
+  
+            <div class="form-group">
+              <label for="name">NOMBRE</label>
+              <input type="text" name="name" id="name" placeholder="Nombre de la vivienda" required>
+            </div>
+  
+            <div class="form-group">
+              <label for="description">DESCRIPCION</label>
+              <input type="text" name="description" id="description" placeholder="Descripcion de la vivienda" required>
+            </div>
+  
+            <div class="form-group">
+              <label for="price">PRECIO</label>
+              <input type="number" name="price" id="price" placeholder="Costo de la Vivienda" required>
+            </div>
+  
+            <div class="form-group">
+              <label for="area">SUPERFICIE</label>
+              <input type="number" name="area" id="area" placeholder="Superficie de la Vivienda" required>
+            </div>          
+  
+            <div class="form-group">
+              <label for="credit">APTO CREDITO</label>
+              <!-- input with options true or false -->
+              <select name="credit" id="credit" required>
+                <option value="True">Si</option>
+                <option value="False">No</option>
+              </select>
+            </div>
+  
+            <div class="form-group">
+              <label for="image">IMAGEN</label>
+              <input class="fileBtn" type="file" name="image" id="image" required>
+            </div>  
+              
+            <div class="form-group">
+              <button type="submit" className="addBtn">CREAR</button>
+            </div>
+
+            </div>
+          </form>
+          
+        </div> 
+        <div class="mainLinks">
+          <a href="/obras/list-obras">Volver a Obras</a>
+        </div>
+    </main>
+
+    
+
+  {% else %}
+
+    <main>
+      <div class="mainLinks createPage">
+        <h1>PROPIEDAD CREADA</h1>  
+        <a href="/obras/list-obras">Ir a Obras</a>
+      </div>
+    </main>
+      
+  {% endif %}
+
+</section>
+{% endblock %}

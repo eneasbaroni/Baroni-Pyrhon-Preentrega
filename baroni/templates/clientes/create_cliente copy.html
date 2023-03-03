@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %} Crear Cliente {% endblock %}
+{% block content %}
+<section class="section">
+  {% if request.method == "GET"%}  
+  
+    <!-- AGREGAR PERMISO ADMINISTRADOR ->if request.user.is_superuser--> 
+    <main id="form">
+
+      <h1>CREAR CLIENTE</h1> 
+      <div class="formContainer">
+        <form action="" method="POST"> <!-- en acction no va nada ya que utiliza la misma url -->
+
+          {% csrf_token %} 
+          <legend>FORMULARIO DE CREACION</legend>
+
+          <div class="form-group">
+            <label for="name">NOMBRE</label>
+            <input type="text" name="name" id="name" placeholder="Nombre" required>
+          </div>
+
+          <div class="form-group">
+            <label for="last_name">APELLIDO</label>
+            <input type="text" name="last_name" id="last_name" placeholder="Apellido" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">MAIL</label>
+            <input type="text" name="email" id="email" placeholder="Mail" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">TELEFONO</label>
+            <input type="text" name="phone" id="phone" placeholder="Telefono" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address">DIRECCION</label>
+            <input type="text" name="address" id="address" placeholder="Dirección" required>
+          </div>
+
+          <div class="form-group">
+            <label for="credit">APTO CREDITO</label>
+            <!-- input with options true or false -->
+            <select name="credit" id="credit" required>
+              <option value="True">Si</option>
+              <option value="False">No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="active">ESTADO</label>
+            <!-- input with options true or false -->
+            <select name="active" id="active" required>
+              <option value="True">Activo</option>
+              <option value="False">Inactivo</option>
+            </select>
+          </div>              
+            
+          <div class="form-group">
+            <button type="submit" className="addBtn">CREAR</button>
+          </div>
+
+          
+        </form>
+        
+      </div>  
+
+      <div class="mainLinks">
+        <a href="/">Volver a Home</a>
+      </div>
+
+    </main>
+   
+
+  {% else %}
+
+    <main>
+      <div class="mainLinks createPage"> 
+        <h1>CLEINTE CREADO</h1>  
+        <a href="/clientes/list-clientes">Listado de Clientes</a>
+      </div>
+    </main>  
+
+  {% endif %}
+
+
+</section>
+{% endblock %}
