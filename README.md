@@ -38,15 +38,23 @@ Pre-entrega del curso de Python en CoderHouse
     ```
     
     para instalar pillow
+    
+7. Ejecutar
+
+    ```
+    pip install "django-phonenumber-field[phonenumbers]"
+    ```
+    
+    para instalar django-phonenumber-field, para poder validar los camppos de formulario con datos de telefonos.
 
 
-7. moverse a la carpeta del proyecto ejecutando
+8. moverse a la carpeta del proyecto ejecutando
 
     ```
     cd baroni
     ```
 
-8. Ejecutar
+9. Ejecutar
 
     ```
     python manage.py runserver
@@ -54,7 +62,7 @@ Pre-entrega del curso de Python en CoderHouse
 
     para levantar el servidor
 
-9. Abrir el navegador en la dirección http://localhost:8000/     
+10. Abrir el navegador en la dirección http://localhost:8000/     
 
 
 ## Uso
