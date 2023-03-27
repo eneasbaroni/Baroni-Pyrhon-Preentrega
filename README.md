@@ -4,7 +4,7 @@ Pre-entrega del curso de Python en CoderHouse
 
 ## Instalación
 
-1. Forkeá y cloná el repositorio
+1. Forkeá y cloná el repositorio.
 
 2. Parado en la raíz del proyecto ejecutar 
 
